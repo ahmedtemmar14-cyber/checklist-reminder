@@ -1,16 +1,28 @@
 {
-  "name": "documentschecklistreminder",
+  "name": "checklist-reminder",
   "version": "1.0.0",
-  "description": "",
-  "main":"main.js",
- "scripts": {
-  "start": "electron ."
-},
-  "keywords": [],
-  "author": "",
+  "description": "تطبيق سطح مكتب لتذكير المواعيد",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "author": "ahmedtemmar14-cyber",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
-    "electron": "^44.4.5"
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "checklist.reminder",
+    "productName": "Checklist Reminder",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html"
+    ],
+    "win": {
+      "target": "nsis"
+    }
   }
 }
